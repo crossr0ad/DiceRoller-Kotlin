@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 
 /**
- * This activity arrows the user to roll a dice and view the result on the screen.
+ * This activity arrows the user to roll two dices and view the result on the screen.
  **/
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,13 +19,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Roll the dice and update the screen with the result.
+     * Roll the two dices and update the screen with the result.
      */
     private fun rollDice() {
         val dice = Dice(6)
-        val diceRoll = dice.roll()
         val resultTextView: TextView = findViewById(R.id.textView)
-        resultTextView.text = diceRoll.toString()
+        resultTextView.text = dice.roll().toString()
+
+        val dice2 = Dice(6)
+        val resultTextView2: TextView = findViewById(R.id.textView2)
+        resultTextView2.text = dice2.roll().toString()
     }
 }
 
